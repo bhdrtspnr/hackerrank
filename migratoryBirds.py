@@ -2,6 +2,7 @@
 
 import math
 import os
+from pickle import FALSE
 import random
 import re
 import sys
@@ -13,6 +14,8 @@ import sys
 # The function accepts INTEGER_ARRAY arr as parameter.
 #
 
+DEBUG_FLAG = FALSE
+
 def migratoryBirds(arr):
     
     uniqueBirdArray = {}
@@ -20,14 +23,14 @@ def migratoryBirds(arr):
     for i in range(len(arr)):
         if not arr[i] in uniqueBirdArray.keys():
             uniqueBirdArray[arr[i]] = 0
-    
-    print(uniqueBirdArray.keys())
+    if DEBUG_FLAG:
+        print(uniqueBirdArray.keys())
 
     for i in range(len(arr)):
         if arr[i] in uniqueBirdArray.keys():
             uniqueBirdArray[arr[i]] +=1
-
-    print(uniqueBirdArray)
+    if DEBUG_FLAG:
+        print(uniqueBirdArray)
 
     return max(sorted(uniqueBirdArray), key=uniqueBirdArray.get)
 

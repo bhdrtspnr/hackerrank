@@ -1,5 +1,8 @@
 
 
+import math
+
+
 def searchForward(numberOfPages, targetPage):
     if targetPage==1:
         return 0
@@ -7,10 +10,7 @@ def searchForward(numberOfPages, targetPage):
         return int(targetPage/2)
 
 def searchBackward(numberOfPages, targetPage):
-    if ((targetPage==numberOfPages) or (targetPage==numberOfPages-1)):
-        return 0
-    else:
-        return numberOfPages-1-targetPage
+    int(targetPage/2)
 
 
 def pageCount(numberOfPages, targetPage):
